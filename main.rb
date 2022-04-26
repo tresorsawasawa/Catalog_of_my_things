@@ -1,5 +1,6 @@
 require_relative 'app'
 
+# rubocop:disable Metrics/CyclomaticComplexity
 class Main
   def options
     puts 'Welcome, what would you like to do?'
@@ -60,6 +61,7 @@ class Main
     end
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
 
 main = Main.new
 main.options
