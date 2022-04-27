@@ -10,6 +10,7 @@ class Item
     @archived = archived
   end
 
+  # rubocop:disable Style/TrivialAccessors
   def author=(author)
     @author = author
   end
@@ -21,6 +22,7 @@ class Item
   def source=(source)
     @source = source
   end
+  # rubocop:enable Style/TrivialAccessors
 
   def move_to_archive
     @archived = true if can_be_archived?
