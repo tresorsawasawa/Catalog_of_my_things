@@ -37,12 +37,8 @@ class Item
   private
 
   def can_be_archived?
-
     now = Date.today.year
     published = @publish_date.to_i
     (now - published) >= 10
-
-   
-
   end
 end
