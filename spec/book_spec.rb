@@ -3,7 +3,11 @@ require './classes/book'
 
 describe 'Book' do
   context 'takes a book and validates can_be_archived method' do
-    book = Book.new('publisher', 'bad', Time.new(2015, 0o5, 0o5))
+    book = Book.new('The Best Book', 'publisher', 'bad', Time.new(2015, 0o5, 0o5))
+
+    it 'should validate the book title' do
+        expect(book.title).to eq 'The Best Book'
+    end
 
     it 'should validate the book publisher' do
       expect(book.publisher).to eq 'publisher'

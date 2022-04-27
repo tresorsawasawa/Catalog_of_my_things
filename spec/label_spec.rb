@@ -4,7 +4,7 @@ require './classes/book'
 describe 'Label' do
   context 'takes label and validates it\'s properties' do
     label = Label.new('Gift', 'Green')
-    book = Book.new('publisher', 'bad', Date.parse('2022/4/27'))
+    book = Book.new('The Best Book', 'publisher', 'bad', Date.parse('2022/4/27'))
 
     it 'should validate the label title' do
       expect(label.title).to eq 'Gift'
