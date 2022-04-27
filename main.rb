@@ -1,4 +1,6 @@
 require_relative 'app'
+
+# rubocop:disable Metrics/CyclomaticComplexity
 class Main
   def options
     puts 'Welcome, what would you like to do?'
@@ -15,19 +17,17 @@ class Main
     10. Add a music album
     11. Add a movie
     12. Add a game
-    13. Exit
-    '
+    13. Exit'
     puts 'Select option by typing the number: '
   end
 
   def validate_input
     app = App.new
     option = nil
-
     while option != 13
       options
       option = gets.chomp.to_i
-      
+
       case option
       when 1
         app.list_all_books
@@ -54,9 +54,7 @@ class Main
       when 12
         app.add_a_game
       when 13
-        puts
-        puts 'Thank you for the using the catalog of things. Goodbye!'
-        puts
+        puts "\nThank you for the using the catalog of things. Goodbye!\n\n"
       else
         puts 'Invalid option'
       end
