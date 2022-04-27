@@ -6,13 +6,13 @@ describe 'Book' do
     book = Book.new('publisher', 'bad', Time.new(2015, 0o5, 0o5))
 
     it 'should validate the book publisher' do
-        expect(book.publisher).to eq 'publisher'
+      expect(book.publisher).to eq 'publisher'
     end
 
     it 'should validate the book cover state' do
       expect(book.cover_state).to eq 'bad'
     end
-  
+
     it 'should validate the book publish date' do
       expect(book.publish_date).to eq Time.new(2015, 0o5, 0o5)
     end
@@ -21,5 +21,5 @@ describe 'Book' do
       book.move_to_archive
       expect(book.archived).to be true
     end
-  end  
+  end
 end
