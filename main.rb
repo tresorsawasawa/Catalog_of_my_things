@@ -15,7 +15,7 @@ class Main
     10. Add a music album
     11. Add a movie
     12. Add a game
-    13. Quit
+    13. Exit
     '
     puts 'Select option by typing the number: '
   end
