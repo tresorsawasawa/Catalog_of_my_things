@@ -1,4 +1,7 @@
-require_relative './console/display_music_albums'
+require_relative './console/music_album_manager'
+require_relative './classes/music_album'
+require_relative './classes/genre'
+require_relative './classes/label'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
@@ -6,9 +9,9 @@ class App
   def initialize
     # all are default values, you can  change them according your tasks
     @books = []
-    @authors = []
-    @labels = []
-    @genres = []
+    # @authors = [Author.new('Stephen', 'King')]
+    @labels = [Label.new('Gift', 'Green'), Label.new('New', 'Blue')]
+    @genres = [Genre.new('Comedy'), Genre.new('Thriller')]
     @music_albums = []
     @games = []
   end
@@ -69,6 +72,3 @@ class App
     puts 'list all sources'
   end
 end
-
-app = App.new
-p app.list_all_authors
