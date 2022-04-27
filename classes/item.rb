@@ -39,8 +39,8 @@ class Item
   private
 
   def can_be_archived?
-    currently_year = DateTime.now.next_month.strftime('%Y').to_i
-    publish_year = @publish_date.to_i
-    (currently_year - publish_year) >= 10
+    now = Date.today.year
+    published = @publish_date.to_i
+    (now - published) >= 10
   end
 end
