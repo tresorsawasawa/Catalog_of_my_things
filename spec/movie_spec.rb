@@ -7,6 +7,13 @@ describe Movie do
     end
 
     it 'Create instance of Movie class' do
-      expect(@music_album.instance_of?(Movie)).to be(true)
+      expect(@movie.instance_of?(Movie)).to be(true)
+    end
+
+    it 'Check move_to_archive : @archived = true (can_be_archived? = true)' do
+      @movie.silet = true
+      @movie.publish_date = '1990/02/03'
+      @movie.move_to_archive
+      expect(@movie.archived).to eq true
     end
 

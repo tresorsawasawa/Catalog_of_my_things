@@ -1,3 +1,6 @@
+require_relative './item'
+
+
 class Source
   attr_reader :items
   attr_accessor :name, :id
