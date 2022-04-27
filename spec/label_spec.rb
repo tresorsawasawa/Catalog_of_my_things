@@ -15,8 +15,8 @@ describe 'Label' do
     end
 
     it 'should add book item to label items array' do
-        label.add_item(book)
-        expect(label.items[0]).to eq book
+      label.add_item(book)
+      expect(label.items[0]).to eq book
     end
   end
 end
