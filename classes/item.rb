@@ -1,14 +1,16 @@
 require 'date'
 
 class Item
-  attr_accessor :publish_date
-  attr_reader :id, :archived, :author, :genre, :source, :label
+  attr_accessor :publish_date, :archived, :id
+  attr_reader :author, :genre, :source, :label
 
-  def initialize(publish_date, archived)
-    @id = Random.rand(1..1000)
+  # rubocop:disable Style/OptionalBooleanParameter
+  def initialize(publish_date, archived = false, id = Random.rand(1..1000))
+    @id = id
     @publish_date = publish_date
     @archived = archived
   end
+  # rubocop:enable Style/OptionalBooleanParameter
 
   def genre=(genre)
     @genre = genre
