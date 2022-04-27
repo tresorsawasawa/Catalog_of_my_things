@@ -1,3 +1,5 @@
+require_relative './console/display_music_albums'
+
 class App
   attr_accessor :books, :games, :authors, :music_albums
 
@@ -36,7 +38,7 @@ class App
   end
 
   def list_all_music_albums
-    puts 'list music albums'
+    display_music_album(@music_albums)
   end
 
   def list_all_genres
@@ -44,7 +46,7 @@ class App
   end
 
   def add_music_album
-    puts 'add music album'
+    @music_albums << create_new_music_album(@genres)
   end
 
   def list_all_games
