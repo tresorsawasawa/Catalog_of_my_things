@@ -6,7 +6,7 @@ describe 'Book' do
     book = Book.new('The Best Book', 'publisher', 'bad', Time.new(2015, 0o5, 0o5))
 
     it 'should validate the book title' do
-        expect(book.title).to eq 'The Best Book'
+      expect(book.title).to eq 'The Best Book'
     end
 
     it 'should validate the book publisher' do
