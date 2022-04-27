@@ -4,11 +4,13 @@ class Item
   attr_accessor :publish_date, :archived, :id
   attr_reader :author, :genre, :source, :label
 
+  # rubocop:disable Style/OptionalBooleanParameter
   def initialize(publish_date, archived = false, id = Random.rand(1..1000))
     @id = id
     @publish_date = publish_date
     @archived = archived
   end
+  # rubocop:enable Style/OptionalBooleanParameter
 
   def genre=(genre)
     @genre = genre
