@@ -10,7 +10,6 @@ class App
   attr_accessor :books, :games, :authors, :music_albums
 
   include AddBook
-
   include PreserveBook
 
   def initialize
@@ -47,7 +46,7 @@ class App
     puts 'add a book'
   end
 
-  def save_book
+  def save_data
     create_book
   end
 
