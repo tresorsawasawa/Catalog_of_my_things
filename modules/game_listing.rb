@@ -1,11 +1,29 @@
 require_relative './../app'
-# The following options should be available:
-# List of games
-# List all authors (e.g. 'Stephen King')
 
 module Listing
-  def list_games
-    games = App.instance_variable_get(:@games)
-    puts games
+  def list_games(games)
+    if games.empty?
+      puts 'There are no games available'
+    else
+      games.each do |game|
+        puts "
+          Game\'s last played at : #{game.last_played_at}
+          Published on : #{game.publish_date}
+          Multiplayer: #{game.multiplayer == 'y' ? 'Yes' : 'No'}
+          "
+      end
+    end
+  end
+
+  def list_authors(authors)
+    if authors.empty?
+      puts 'There are no authors available'
+    else
+      authors.each do |author|
+        puts "
+          Author's name: #{author.first_name} #{author.last_name}
+        "
+      end
+    end
   end
 end

@@ -69,7 +69,8 @@ class App
   end
 
   def list_all_games
-    list_games
+    list_games(@games)
+    sleep 2
   end
 
   def add_a_game
@@ -81,7 +82,8 @@ class App
   end
 
   def list_all_authors
-    puts 'list authors'
+    list_authors(@authors)
+    sleep 2
   end
 
   def list_all_movies
