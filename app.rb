@@ -50,10 +50,6 @@ class App
     create_book
   end
 
-  # def load_book
-  #   puts 'Load book'
-  # end
-
   def list_all_music_albums
     display_music_album(@music_albums)
   end
