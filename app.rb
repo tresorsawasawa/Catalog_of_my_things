@@ -1,4 +1,6 @@
+require 'json'
 require_relative './modules/music_album_manager'
+require_relative './modules/preserve_music_album_data'
 require_relative './classes/music_album'
 require_relative './classes/genre'
 require_relative './classes/book'
@@ -14,9 +16,9 @@ class App
     # all are default values, you can  change them according your tasks
     @books = []
     @authors = []
-    @labels = []
+    @labels = [Label.new('Gift', 'Green'), Label.new('New', 'Blue')]
     @genres = [Genre.new('Comedy'), Genre.new('Thriller')]
-    @music_albums = []
+    @music_albums = load_music_albums(@genres)
     @games = []
   end
 
@@ -61,7 +63,7 @@ class App
   end
 
   def add_music_album
-    @music_albums << create_new_music_album(@genres)
+    @music_albums << create_new_music_album(@genres, @labels)
   end
 
   def list_all_games
@@ -82,5 +84,9 @@ class App
 
   def list_all_sources
     puts 'list all sources'
+  end
+
+  def save_data
+    save_music_album(@music_albums)
   end
 end

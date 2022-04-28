@@ -7,10 +7,11 @@ def display_music_album(music_albums)
   puts "Database is empty. Add a music album.\n\n" if music_albums.empty?
   music_albums.each do |music_album|
     puts "Music album id: #{music_album.id}"
-    puts "Pubublish deta:#{music_album.publish_date}"
+    puts "Publish date:#{music_album.publish_date}"
     puts "Archived:#{music_album.archived}"
     puts "On spotify:#{music_album.on_spotify}"
     puts "Genre:#{music_album.genre.name}"
+    puts "Label:#{music_album.label.title}"
     puts
   end
 end
@@ -25,13 +26,14 @@ def music_album_inputs
   [publish_date, archived, on_spotify]
 end
 
-def create_new_music_album(genres)
+def create_new_music_album(genres, labels)
   puts
   puts "CREATE A NEW MUSIC ALBUM\n\n"
   publish_date, archived, on_spotify = music_album_inputs
   puts
   music_album = MusicAlbum.new(on_spotify, publish_date, archived)
   add_genres(genres, music_album)
+  add_label(labels, music_album)
   puts
   puts "Music_album created successfully.\n\n"
   music_album
