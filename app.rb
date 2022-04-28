@@ -1,7 +1,12 @@
-require_relative './console/display_music_albums'
+# require_relative './console/display_music_albums'
+require_relative './classes/book'
+require_relative './classes/label'
+require_relative './modules/add_book'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
+
+  include AddBook
 
   def initialize
     # all are default values, you can  change them according your tasks
@@ -14,19 +19,27 @@ class App
   end
 
   def list_all_books
-    puts 'list all books'
+    puts 'There are no books available' if @books.empty?
+    @books.each do |book|
+      puts "Title: #{book.title}, Publisher: #{book.publisher},
+      Cover state: #{book.cover_state}, Date of Publish: #{book.publish_date}"
+    end
   end
 
   def add_a_book
-    puts 'add a book'
+    @books << new_book
+    puts 'Book is created'
+  end
+
+  def list_all_labels
+    puts 'There are no labels available' if @labels.empty?
+    @labels.each do |label|
+      puts "Title: #{label.title}, Color: #{label.color}"
+    end
   end
 
   def add_a_movie
     puts 'add a book'
-  end
-
-  def list_all_labels
-    puts 'list all labels'
   end
 
   def save_book
