@@ -1,9 +1,12 @@
 # require_relative './console/display_music_albums'
 require_relative './classes/book'
 require_relative './classes/label'
+require_relative './modules/add_book'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
+
+  include AddBook
 
   def initialize
     # all are default values, you can  change them according your tasks
@@ -16,6 +19,7 @@ class App
   end
 
   def list_all_books
+    puts 'There are no books available' if @books.empty?
     @books.each do |book|
       puts "Title: #{book.title}, Publisher: #{book.publisher},
       Cover state: #{book.cover_state}, Date of Publish: #{book.publish_date}"
@@ -23,19 +27,7 @@ class App
   end
 
   def add_a_book
-    puts 'Please write in title: '
-    title = gets.chomp
-
-    puts 'Please write in publisher: '
-    publisher = gets.chomp
-
-    puts 'Please write in cover state ["good"/"bad"]'
-    cover_state = gets.chomp
-
-    puts 'Please write in date of publish [Enter date in format (yyyy-mm-dd)]'
-    publish_date = gets.chomp
-
-    @books.push(Book.new(title, publisher, cover_state, publish_date))
+    @books << new_book
     puts 'Book is created'
   end
 
