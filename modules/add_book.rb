@@ -14,6 +14,6 @@ module AddBook
     puts 'Please write in date of publish [Enter date in format (yyyy-mm-dd)]'
     publish_date = gets.chomp
 
-  Book.new(title, publisher, cover_state, publish_date)
+    Book.new(title, publisher, cover_state, publish_date)
   end
 end
