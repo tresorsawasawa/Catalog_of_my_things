@@ -54,6 +54,7 @@ class Main
       when 12
         app.add_a_game
       when 13
+        app.save_data
         puts "\nThank you for the using the catalog of things. Goodbye!\n\n"
       else
         puts 'Invalid option'
