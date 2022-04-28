@@ -9,8 +9,8 @@ class App
   def initialize
     # all are default values, you can  change them according your tasks
     @books = []
-    # @authors = [Author.new('Stephen', 'King')]
-    @labels = [Label.new('Gift', 'Green'), Label.new('New', 'Blue')]
+    @authors = []
+    @labels = []
     @genres = [Genre.new('Comedy'), Genre.new('Thriller')]
     @music_albums = []
     @games = []
