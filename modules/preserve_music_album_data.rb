@@ -1,8 +1,7 @@
 require_relative '../classes/music_album'
 require_relative 'helper'
 
-def save_music_album(musics_albums)
-
+def save_music_album(_musics_albums)
   music_album = music_albums.map do |item|
     {
       publish_date: item.publish_date,
