@@ -5,11 +5,13 @@ require_relative './classes/book'
 require_relative './classes/label'
 require_relative './modules/add_book'
 require_relative './modules/game_module'
+require_relative './modules/game_listing'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
 
   include InitializeMethods
+  include Listing
   include AddBook
 
   def initialize
@@ -67,7 +69,7 @@ class App
   end
 
   def list_all_games
-    puts 'list games'
+    list_games
   end
 
   def add_a_game
