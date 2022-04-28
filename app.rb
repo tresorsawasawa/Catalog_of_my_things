@@ -77,7 +77,7 @@ class App
     game = create_new_game
     @games << game
     @authors << game.author
-    puts "\nThank you for adding a new game:\n"
+    puts "\nThank you for adding a new game.\n"
     sleep 3
   end
 

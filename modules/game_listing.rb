@@ -7,6 +7,8 @@ module Listing
     else
       games.each do |game|
         puts "
+                LIST OF GAMES
+          Game id: #{game.id}
           Game\'s last played at : #{game.last_played_at}
           Published on : #{game.publish_date}
           Multiplayer: #{game.multiplayer == 'y' ? 'Yes' : 'No'}
@@ -21,6 +23,7 @@ module Listing
     else
       authors.each do |author|
         puts "
+                LIST OF AUTHORS
           Author's name: #{author.first_name} #{author.last_name}
         "
       end

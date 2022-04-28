@@ -8,11 +8,9 @@ module InitializeMethods
 
     puts 'Is it Multiplayer? [Y/N]: '
     multiplayer = gets.chomp.downcase
-    # multiplayer = multiplayer?(answer)
 
     puts 'Publish date (yyyy-mm-dd): '
     publish_date = gets.chomp
-    # publish_date = validate_date(date_answer)
 
     Game.new(last_played_at, multiplayer, publish_date)
   end
