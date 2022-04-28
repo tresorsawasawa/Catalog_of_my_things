@@ -11,16 +11,16 @@ module PreserveMusicAlbums
         genre: item.genre&.name
       }
     end
-  
+
     data = JSON.generate(music_album)
     File.write('data/music_albums.json', data)
   end
-  
+
   def load_music_albums(genres)
     return [] unless File.exist?('data/music_albums.json')
-  
+
     music_albums = []
-  
+
     data = File.read('data/music_albums.json')
     JSON.parse(data).each do |item|
       music_album = MusicAlbum.new(item['on_spotify'], item['publish_date'], item['archived'])

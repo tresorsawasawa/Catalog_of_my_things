@@ -15,7 +15,7 @@ module MusicAlbumManager
       puts
     end
   end
-  
+
   def music_album_inputs
     print 'Enter publish date(i.e YYYY/MM/DD): '
     publish_date = gets.chomp
@@ -25,7 +25,7 @@ module MusicAlbumManager
     on_spotify = gets.chomp
     [publish_date, archived, on_spotify]
   end
-  
+
   def create_new_music_album(genres)
     puts
     puts "CREATE A NEW MUSIC ALBUM\n\n"
@@ -36,5 +36,5 @@ module MusicAlbumManager
     puts
     puts "Music_album created successfully.\n\n"
     music_album
-  end  
+  end
 end

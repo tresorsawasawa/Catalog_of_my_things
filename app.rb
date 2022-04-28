@@ -17,7 +17,7 @@ class App
   include GenreManager
   include MusicAlbumManager
   include PreserveMusicAlbums
-  
+
   def initialize
     # all are default values, you can  change them according your tasks
     @books = load_book
@@ -54,6 +54,7 @@ class App
 
   def save_data
     create_book
+    save_music_album(@music_albums)
   end
 
   def list_all_music_albums
@@ -86,9 +87,5 @@ class App
 
   def list_all_sources
     puts 'list all sources'
-  end
-
-  def save_data
-    save_music_album(@music_albums)
   end
 end
