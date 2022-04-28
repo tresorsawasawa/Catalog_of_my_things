@@ -1,4 +1,5 @@
-require_relative './game_author'
+require_relative './../classes/game_author'
+require_relative './../app'
 
 module InitializeMethods
   def game_options
@@ -21,8 +22,7 @@ module InitializeMethods
     first_name = gets.chomp
     puts 'Last name: '
     last_name = gets.chomp
-    author = Author.new(first_name, last_name)
-    author
+    Author.new(first_name, last_name)
   end
 
   def create_new_game
@@ -32,4 +32,3 @@ module InitializeMethods
     game
   end
 end
-

@@ -4,7 +4,7 @@ require_relative './classes/genre'
 require_relative './classes/book'
 require_relative './classes/label'
 require_relative './modules/add_book'
-require_relative './classes/game_module'
+require_relative './modules/game_module'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
@@ -71,7 +71,11 @@ class App
   end
 
   def add_a_game
-    @games << create_new_game
+    game = create_new_game
+    @games << game
+    @authors << game.author
+    puts "\nThank you for adding a new game:\n"
+    sleep 3
   end
 
   def list_all_authors
@@ -86,6 +90,3 @@ class App
     puts 'list all sources'
   end
 end
-
-# app = App.new
-# p app.list_all_authors
