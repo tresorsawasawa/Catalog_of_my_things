@@ -3,8 +3,8 @@ require_relative '../classes/genre'
 require_relative 'helper'
 
 def display_music_album(music_albums)
-  puts 'Database is empty. Add a music album.' if music_albums.empty?
-  puts
+  puts "\nMUSIC ALBUMS LIST\n\n"
+  puts "Database is empty. Add a music album.\n\n" if music_albums.empty?
   music_albums.each do |music_album|
     puts "Music album id: #{music_album.id}"
     puts "Pubublish deta:#{music_album.publish_date}"
