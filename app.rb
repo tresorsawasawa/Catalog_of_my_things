@@ -1,7 +1,11 @@
-require_relative './console/display_music_albums'
+# require_relative './console/display_music_albums'
+require_relative './classes/game_module'
+require_relative './main'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
+
+  include InitializeMethods
 
   def initialize
     # all are default values, you can  change them according your tasks
@@ -54,7 +58,7 @@ class App
   end
 
   def add_a_game
-    puts 'Add game'
+    @games << create_new_game
   end
 
   def list_all_authors
@@ -70,5 +74,5 @@ class App
   end
 end
 
-app = App.new
-p app.list_all_authors
+# app = App.new
+# p app.list_all_authors

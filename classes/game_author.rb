@@ -1,5 +1,6 @@
 require_relative './item'
 
+require_relative 'game.rb'
 class Author < Item
   attr_accessor :id, :first_name, :last_name, :items
 
@@ -16,3 +17,22 @@ class Author < Item
     item.author = self
   end
 end
+
+# class Menu
+  # def options
+  #   puts 'Last played at (yyyy-mm-dd): '
+  #   date_answer = gets.chomp
+  #   last_played_at = date_answer
+
+  #   puts 'Is it Multiplayer? [Y/N]: '
+  #   answer = gets.chomp.downcase
+  #   multiplayer = multiplayer?(answer)
+
+  #   puts 'Publish date (yyyy-mm-dd): '
+  #   publisher_answer = gets.chomp
+  #   publish_date = validate_date(date_answer)
+
+  #   game = Game.new(last_played_at, multiplayer, publish_date)
+
+  # end
+# end
