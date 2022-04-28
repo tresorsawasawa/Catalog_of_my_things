@@ -11,7 +11,6 @@ def display_music_album(music_albums)
     puts "Archived:#{music_album.archived}"
     puts "On spotify:#{music_album.on_spotify}"
     puts "Genre:#{music_album.genre.name}"
-    puts "Label:#{music_album.label.title}"
     puts
   end
 end
@@ -26,14 +25,13 @@ def music_album_inputs
   [publish_date, archived, on_spotify]
 end
 
-def create_new_music_album(genres, labels)
+def create_new_music_album(genres)
   puts
   puts "CREATE A NEW MUSIC ALBUM\n\n"
   publish_date, archived, on_spotify = music_album_inputs
   puts
   music_album = MusicAlbum.new(on_spotify, publish_date, archived)
   add_genres(genres, music_album)
-  add_label(labels, music_album)
   puts
   puts "Music_album created successfully.\n\n"
   music_album

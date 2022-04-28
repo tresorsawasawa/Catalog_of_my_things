@@ -7,8 +7,7 @@ def save_music_album(_musics_albums)
       publish_date: item.publish_date,
       archived: item.archived,
       on_spotify: item.on_spotify,
-      genre: item.genre&.name,
-      label: item.label&.title
+      genre: item.genre&.name
     }
   end
 
@@ -27,8 +26,6 @@ def load_music_albums(genres)
     unless item['publish_date'].nil?
       genre = search_genre(genres, item['genre'])
       genre&.add_item(music_album)
-      label = search_label(labels, item['label'])
-      label&.add_item(music_album)
     end
     music_albums << music_album
   end
