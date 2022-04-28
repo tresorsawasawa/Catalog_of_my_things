@@ -1,4 +1,4 @@
-require_relative './app'
+require_relative 'app'
 
 # rubocop:disable Metrics/CyclomaticComplexity
 class Main
