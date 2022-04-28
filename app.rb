@@ -6,6 +6,7 @@ require_relative './classes/genre'
 require_relative './classes/book'
 require_relative './classes/label'
 require_relative './modules/add_book'
+require_relative './modules/genre_manager'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
@@ -16,8 +17,8 @@ class App
     # all are default values, you can  change them according your tasks
     @books = []
     @authors = []
-    @labels = [Label.new('Gift', 'Green'), Label.new('New', 'Blue')]
-    @genres = [Genre.new('Comedy'), Genre.new('Thriller')]
+    @labels = []
+    @genres = music_genres
     @music_albums = load_music_albums(@genres)
     @games = []
   end
@@ -59,11 +60,11 @@ class App
   end
 
   def list_all_genres
-    puts 'list genres'
+    display_genres(@genres)
   end
 
   def add_music_album
-    @music_albums << create_new_music_album(@genres, @labels)
+    @music_albums << create_new_music_album(@genres)
   end
 
   def list_all_games
