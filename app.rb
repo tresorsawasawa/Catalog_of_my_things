@@ -7,6 +7,9 @@ require_relative './modules/add_book'
 require_relative './modules/game_module'
 require_relative './modules/game_listing'
 require_relative './modules/preserve_book'
+require_relative './classes/movie'
+require_relative './modules/add_movie'
+require_relative './modules/preserve_movie'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
@@ -15,6 +18,8 @@ class App
   include Listing
   include AddBook
   include PreserveBook
+  include AddMovie
+  include PreserveMovie
 
   def initialize
     # all are default values, you can  change them according your tasks
@@ -24,6 +29,8 @@ class App
     @genres = [Genre.new('Comedy'), Genre.new('Thriller')]
     @music_albums = []
     @games = []
+    @movies = load_movie
+    @source = []
   end
 
   def list_all_books
@@ -34,9 +41,21 @@ class App
     end
   end
 
+  def list_all_movies
+    puts 'There are no movies available' if @movies.empty?
+    @movies.each do |movie|
+      puts "Silet: #{movie.silet}, Date of Publish: #{movie.publish_date}"
+    end
+  end
+
   def add_a_book
     @books << new_book
     puts 'Book is created'
+  end
+
+  def add_a_movie
+    @movies << new_movie
+    puts 'movie is created'
   end
 
   def list_all_labels
@@ -44,10 +63,6 @@ class App
     @labels.each do |label|
       puts "Title: #{label.title}, Color: #{label.color}"
     end
-  end
-
-  def add_a_movie
-    puts 'add a book'
   end
 
   def save_data
@@ -82,10 +97,6 @@ class App
   def list_all_authors
     list_authors(@authors)
     sleep 2
-  end
-
-  def list_all_movies
-    puts 'list movies'
   end
 
   def list_all_sources
