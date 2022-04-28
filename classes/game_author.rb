@@ -1,6 +1,6 @@
 require_relative './item'
 
-require_relative 'game.rb'
+require_relative 'game'
 class Author < Item
   attr_accessor :id, :first_name, :last_name, :items
 
