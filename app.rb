@@ -1,4 +1,4 @@
-require_relative './console/music_album_manager'
+require_relative './modules/music_album_manager'
 require_relative './classes/music_album'
 require_relative './classes/genre'
 require_relative './classes/label'

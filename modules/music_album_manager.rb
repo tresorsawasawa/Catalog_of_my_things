@@ -36,4 +36,3 @@ def create_new_music_album(genres)
   puts "Music_album created successfully.\n\n"
   music_album
 end
-
