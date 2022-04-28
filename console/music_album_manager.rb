@@ -16,26 +16,24 @@ def display_music_album(music_albums)
 end
 
 def music_album_inputs
-  print 'Enter publish date(i.e YYYT-MM-DD): '
+  print 'Enter publish date(i.e YYYY/MM/DD): '
   publish_date = gets.chomp
-  print 'Is it archived? [Yes/No]: '
+  print 'Enter archived [Yes/No]: '
   archived = gets.chomp
-  print 'Is it on spotify? [Yes/No]: '
+  print 'Enter on spotify/not on spotify [Yes/No]: '
   on_spotify = gets.chomp
   [publish_date, archived, on_spotify]
 end
 
 def create_new_music_album(genres)
   puts
-  puts 'CREATE A NEW MUSIC ALBUM'
+  puts "CREATE A NEW MUSIC ALBUM\n\n"
   publish_date, archived, on_spotify = music_album_inputs
   puts
   music_album = MusicAlbum.new(on_spotify, publish_date, archived)
-  # add_author(author, music_album)
   add_genres(genres, music_album)
-  # add_label(label, music_album)
   puts
-  puts "Music_album created successfully."
+  puts "Music_album created successfully.\n\n"
   music_album
 end
 
