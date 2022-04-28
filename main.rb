@@ -17,51 +17,51 @@ class Main
     10. Add a music album
     11. Add a movie
     12. Add a game
-    13. Quit
-    '
+    13. Exit'
     puts 'Select option by typing the number: '
-
-    option = gets.chomp.to_i
-    validate_input(option)
   end
 
-  def validate_input(option)
+  def validate_input
     app = App.new
+    option = nil
+    while option != 13
+      options
+      option = gets.chomp.to_i
 
-    case option
-    when 1
-      app.list_all_books
-    when 2
-      app.list_all_music_albums
-    when 3
-      app.list_all_movies
-    when 4
-      app.list_all_games
-    when 5
-      app.list_all_genres
-    when 6
-      app.list_all_labels
-    when 7
-      app.list_all_authors
-    when 8
-      app.list_all_sources
-    when 9
-      app.add_a_book
-    when 10
-      app.add_music_album
-    when 11
-      app.add_a_movie
-    when 12
-      app.add_a_game
-    when 13
-      puts 'Thank you for using our catalog of things. Goodbye!'
-      exit
-    else
-      puts 'Invalid option'
+      case option
+      when 1
+        app.list_all_books
+      when 2
+        app.list_all_music_albums
+      when 3
+        app.list_all_movies
+      when 4
+        app.list_all_games
+      when 5
+        app.list_all_genres
+      when 6
+        app.list_all_labels
+      when 7
+        app.list_all_authors
+      when 8
+        app.list_all_sources
+      when 9
+        app.add_a_book
+      when 10
+        app.add_music_album
+      when 11
+        app.add_a_movie
+      when 12
+        app.add_a_game
+      when 13
+        puts "\nThank you for the using the catalog of things. Goodbye!\n\n"
+      else
+        puts 'Invalid option'
+      end
     end
   end
 end
 # rubocop:enable Metrics/CyclomaticComplexity
 
 main = Main.new
-main.options
+main.validate_input
