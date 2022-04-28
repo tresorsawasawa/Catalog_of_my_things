@@ -7,15 +7,17 @@ require_relative './classes/book'
 require_relative './classes/label'
 require_relative './modules/add_book'
 require_relative './modules/genre_manager'
+require_relative './modules/preserve_book'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
 
   include AddBook
+  include PreserveBook
 
   def initialize
     # all are default values, you can  change them according your tasks
-    @books = []
+    @books = load_book
     @authors = []
     @labels = []
     @genres = music_genres
@@ -47,12 +49,8 @@ class App
     puts 'add a book'
   end
 
-  def save_book
-    puts 'save_book'
-  end
-
-  def load_book
-    puts 'Load book'
+  def save_data
+    create_book
   end
 
   def list_all_music_albums
