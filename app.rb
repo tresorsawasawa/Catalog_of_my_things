@@ -48,10 +48,6 @@ class App
     puts 'add a book'
   end
 
-  def save_data
-    create_book
-  end
-
   def list_all_music_albums
     display_music_album(@music_albums)
   end
@@ -85,6 +81,7 @@ class App
   end
 
   def save_data
+    create_book
     save_music_album(@music_albums)
   end
 end
