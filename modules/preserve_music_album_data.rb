@@ -13,7 +13,7 @@ module PreserveMusicAlbums
     end
   
     data = JSON.generate(music_album)
-    File.write('Data/music_albums.json', data)
+    File.write('data/music_albums.json', data)
   end
   
   def load_music_albums(genres)

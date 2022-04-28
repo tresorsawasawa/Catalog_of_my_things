@@ -14,7 +14,10 @@ class App
 
   include AddBook
   include PreserveBook
-
+  include GenreManager
+  include MusicAlbumManager
+  include PreserveMusicAlbums
+  
   def initialize
     # all are default values, you can  change them according your tasks
     @books = load_book
