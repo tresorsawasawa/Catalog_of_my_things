@@ -57,7 +57,7 @@
 
 A console app that will help you to keep a record of different types of things you won: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below
 
-![schema](https://raw.githubusercontent.com/microverseinc/curriculum-ruby/main/group-capstone/images/catalog_of_my_things.png?token=GHSAT0AAAAAABQQDFYMY5Z2J6QEWFCWDVOQYTL3YUQ)
+![schema](./images/catalog_of_my_things.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
