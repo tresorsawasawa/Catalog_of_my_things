@@ -56,7 +56,6 @@ class Main
       when 13
         app.save_data
         puts "\nThank you for the using the catalog of things. Goodbye!\n\n"
-        app.save_data
       else
         puts 'Invalid option'
       end

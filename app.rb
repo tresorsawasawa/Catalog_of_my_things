@@ -6,20 +6,28 @@ require_relative './classes/genre'
 require_relative './classes/book'
 require_relative './classes/label'
 require_relative './modules/add_book'
+require_relative './modules/genre_manager'
+require_relative './modules/game_module'
+require_relative './modules/game_listing'
 require_relative './modules/preserve_book'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
 
+  include InitializeMethods
+  include Listing
   include AddBook
   include PreserveBook
+  include GenreManager
+  include MusicAlbumManager
+  include PreserveMusicAlbums
 
   def initialize
     # all are default values, you can  change them according your tasks
     @books = load_book
     @authors = []
-    @labels = [Label.new('Gift', 'Green'), Label.new('New', 'Blue')]
-    @genres = [Genre.new('Comedy'), Genre.new('Thriller')]
+    @labels = []
+    @genres = music_genres
     @music_albums = load_music_albums(@genres)
     @games = []
   end
@@ -48,28 +56,39 @@ class App
     puts 'add a book'
   end
 
+  def save_data
+    create_book
+    save_music_album(@music_albums)
+  end
+
   def list_all_music_albums
     display_music_album(@music_albums)
   end
 
   def list_all_genres
-    puts 'list genres'
+    display_genres(@genres)
   end
 
   def add_music_album
-    @music_albums << create_new_music_album(@genres, @labels)
+    @music_albums << create_new_music_album(@genres)
   end
 
   def list_all_games
-    puts 'list games'
+    list_games(@games)
+    sleep 2
   end
 
   def add_a_game
-    puts 'Add game'
+    game = create_new_game
+    @games << game
+    @authors << game.author
+    puts "\nThank you for adding a new game.\n"
+    sleep 3
   end
 
   def list_all_authors
-    puts 'list authors'
+    list_authors(@authors)
+    sleep 2
   end
 
   def list_all_movies
@@ -78,10 +97,5 @@ class App
 
   def list_all_sources
     puts 'list all sources'
-  end
-
-  def save_data
-    create_book
-    save_music_album(@music_albums)
   end
 end
