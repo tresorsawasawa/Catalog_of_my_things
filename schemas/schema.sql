@@ -40,6 +40,19 @@ CREATE TABLE music_album (
   on_spotify BOOLEAN
 )INHERITS(items);
 
+CREATE TABLE game (
+    last_played_at DATE,
+    multiplayer BOOLEAN,
+)INHERITS(items);
+
+CREATE TABLE authors (
+    id  INT GENERATED ALWAYS AS IDENTITY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    PRIMARY KEY(id)
+    FOREIGN KEY(id) REFERENCES item(id)
+);
+
 -- Update "music_album" table
 ALTER TABLE music_album ADD CONSTRAINT music_albums_id PRIMARY KEY (id)
 ALTER TABLE music_album ALTER id ADD GENERATED ALWAYS AS IDENTITY; 
