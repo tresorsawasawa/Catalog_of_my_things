@@ -13,12 +13,14 @@ require_relative './modules/preserve_book'
 require_relative './classes/movie'
 require_relative './modules/add_movie'
 require_relative './modules/preserve_movie'
+require_relative './modules/preserve_games'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
 
   include InitializeMethods
   include Listing
+  include PreserveGames
   include AddBook
   include PreserveBook
 
@@ -32,11 +34,11 @@ class App
   def initialize
     # all are default values, you can  change them according your tasks
     @books = load_book
-    @authors = []
+    @authors = load_authors
+    @games = load_games
     @labels = load_label
     @genres = music_genres
     @music_albums = load_music_albums(@genres)
-    @games = []
     @movies = load_movie
     @source = load_source
   end
@@ -75,9 +77,9 @@ class App
 
   def save_data
     create_book
-
     create_movie
-
+    save_games
+    save_authors
     save_music_album(@music_albums)
   end
 
