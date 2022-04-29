@@ -10,6 +10,9 @@ require_relative './modules/genre_manager'
 require_relative './modules/game_module'
 require_relative './modules/game_listing'
 require_relative './modules/preserve_book'
+require_relative './classes/movie'
+require_relative './modules/add_movie'
+require_relative './modules/preserve_movie'
 require_relative './modules/preserve_games'
 
 class App
@@ -20,6 +23,10 @@ class App
   include PreserveGames
   include AddBook
   include PreserveBook
+
+  include AddMovie
+  include PreserveMovie
+
   include GenreManager
   include MusicAlbumManager
   include PreserveMusicAlbums
@@ -32,6 +39,8 @@ class App
     @labels = load_label
     @genres = music_genres
     @music_albums = load_music_albums(@genres)
+    @movies = load_movie
+    @source = load_source
   end
 
   def list_all_books
@@ -42,9 +51,21 @@ class App
     end
   end
 
+  def list_all_movies
+    puts 'There are no movies available' if @movies.empty?
+    @movies.each do |movie|
+      puts "Silet: #{movie.silet}, Date of Publish: #{movie.publish_date}"
+    end
+  end
+
   def add_a_book
     @books << new_book
     puts 'Book is created'
+  end
+
+  def add_a_movie
+    @movies << new_movie
+    puts 'movie is created'
   end
 
   def list_all_labels
@@ -54,12 +75,9 @@ class App
     end
   end
 
-  def add_a_movie
-    puts 'add a book'
-  end
-
   def save_data
     create_book
+    create_movie
     save_games
     save_authors
     save_music_album(@music_albums)
@@ -95,11 +113,10 @@ class App
     sleep 2
   end
 
-  def list_all_movies
-    puts 'list movies'
-  end
-
   def list_all_sources
-    puts 'list all sources'
+    puts 'There are no sources available' if @source.empty?
+    @source.each do |source|
+      puts "Name: #{source.name}"
+    end
   end
 end

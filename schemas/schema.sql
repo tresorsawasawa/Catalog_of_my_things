@@ -10,7 +10,8 @@ CREATE TABLE item (
     PRIMARY KEY(id),
     FOREIGN KEY (genre_id) REFERENCES genres (id),
     FOREIGN KEY (author_id) REFERENCES authors (id),
-    FOREIGN KEY (label_id) REFERENCES labels (id)
+    FOREIGN KEY (label_id) REFERENCES labels (id),
+    FOREIGN KEY (source_id) REFERENCES sources (id)
 );
 
 CREATE TABLE books (
@@ -25,6 +26,19 @@ CREATE TABLE labels (
     id  INT GENERATED ALWAYS AS IDENTITY,
     title VARCHAR(100),
     color VARCHAR(100),
+    PRIMARY KEY(id)
+);
+
+
+CREATE TABLE movies (
+    id  INT,
+    silet BOOLEAN,
+    FOREIGN KEY(id) REFERENCES item(id)
+);
+
+CREATE TABLE sources (
+    id  INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100),
     PRIMARY KEY(id)
 );
 
@@ -43,3 +57,4 @@ CREATE TABLE music_album (
 -- Update "music_album" table
 ALTER TABLE music_album ADD CONSTRAINT music_albums_id PRIMARY KEY (id)
 ALTER TABLE music_album ALTER id ADD GENERATED ALWAYS AS IDENTITY; 
+
