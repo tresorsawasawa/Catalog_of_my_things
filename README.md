@@ -29,7 +29,7 @@
 
 - [Catalog_of_my_things](#catalog_of_my_things)
   - [Description 🏗️](#description-️)
-  - [Video Description](#video-description)
+  - [Video Demo](#video-demo)
   - [Getting Started 🏁](#getting-started-)
     - [Prerequisites 📜](#prerequisites-)
     - [Setup](#setup)
@@ -61,7 +61,7 @@ A console app that will help you to keep a record of different types of things y
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## [Video Description](https://drive.google.com/file/d/1peEIKRuuo2tsASdeocCJaKIKqHX2NmsP/view?usp=sharing)
+## [Video Demo](https://drive.google.com/file/d/1peEIKRuuo2tsASdeocCJaKIKqHX2NmsP/view?usp=sharing)
 
 ## Getting Started 🏁
 
