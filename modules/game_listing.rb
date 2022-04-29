@@ -9,7 +9,7 @@ module Listing
       games.each do |game|
         puts "
           Game id: #{game.id}
-          Game\'s last played at : #{game.last_played_at}
+          Game last played at : #{game.last_played_at}
           Published on : #{game.publish_date}
           Multiplayer: #{game.multiplayer == 'y' ? 'Yes' : 'No'}
           "
