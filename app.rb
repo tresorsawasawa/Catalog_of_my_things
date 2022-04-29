@@ -30,7 +30,7 @@ class App
     @music_albums = []
     @games = []
     @movies = load_movie
-    @source = []
+    @source = load_source
   end
 
   def list_all_books
@@ -67,6 +67,7 @@ class App
 
   def save_data
     create_book
+    create_movie
   end
 
   def list_all_music_albums
@@ -100,6 +101,9 @@ class App
   end
 
   def list_all_sources
-    puts 'list all sources'
+    puts 'There are no sources available' if @source.empty?
+    @source.each do |source|
+      puts "Name: #{source.name}"
+    end
   end
 end

@@ -9,6 +9,4 @@ describe Movie do
   it 'Create instance of Movie class' do
     expect(@movie).to be_an_instance_of(Movie)
   end
-
- 
 end
