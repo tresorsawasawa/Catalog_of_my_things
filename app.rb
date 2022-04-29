@@ -29,7 +29,6 @@ class App
   include MusicAlbumManager
   include PreserveMusicAlbums
 
-
   def initialize
     # all are default values, you can  change them according your tasks
     @books = load_book
@@ -80,7 +79,6 @@ class App
     create_movie
 
     save_music_album(@music_albums)
-
   end
 
   def list_all_music_albums
