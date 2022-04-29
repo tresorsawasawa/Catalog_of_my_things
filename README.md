@@ -1,5 +1,3 @@
-# Catalog_of_my_things
-
 <div id="top"></div>
 <!-- PROJECT LOGO -->
 <div align="center">
@@ -27,27 +25,26 @@
 <details>
 <summary align="center">Table of Contents</summary>
 
-- [Catalog_of_my_things](#catalog_of_my_things)
-  - [Description 🏗️](#description-️)
-  - [Video Demo](#video-demo)
-  - [Getting Started 🏁](#getting-started-)
-    - [Prerequisites 📜](#prerequisites-)
-    - [Setup](#setup)
-    - [Clone this repository](#clone-this-repository)
-    - [Move into the directory with](#move-into-the-directory-with)
-    - [Run Project](#run-project)
-    - [Install linter](#install-linter)
-    - [Run linter](#run-linter)
-    - [Run tests](#run-tests)
-    - [Auto-correct](#auto-correct)
-    - [Usage](#usage)
-    - [Roadmap](#roadmap)
-  - [Built With 🔨](#built-with-)
-  - [Authors ✍️](#authors-️)
-  - [🤝 Contributors](#-contributors)
-  - [📝 License](#-license)
-  - [Show your support 💪](#show-your-support-)
-  - [Acknowledgments](#acknowledgments)
+- [Description 🏗️](#description-️)
+- [Video Demo](#video-demo)
+- [Getting Started 🏁](#getting-started-)
+  - [Prerequisites 📜](#prerequisites-)
+  - [Setup](#setup)
+  - [Clone this repository](#clone-this-repository)
+  - [Move into the directory with](#move-into-the-directory-with)
+  - [Run Project](#run-project)
+  - [Install linter](#install-linter)
+  - [Run linter](#run-linter)
+  - [Run tests](#run-tests)
+  - [Auto-correct](#auto-correct)
+  - [Usage](#usage)
+  - [Roadmap](#roadmap)
+- [Built With 🔨](#built-with-)
+- [Authors ✍️](#authors-️)
+- [🤝 Contributors](#-contributors)
+- [📝 License](#-license)
+- [Show your support 💪](#show-your-support-)
+- [Acknowledgments](#acknowledgments)
   </details>
 
 <!-- About the project -->
