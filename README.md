@@ -1,5 +1,3 @@
-# Catalog_of_my_things
-
 <div id="top"></div>
 <!-- PROJECT LOGO -->
 <div align="center">
@@ -27,27 +25,26 @@
 <details>
 <summary align="center">Table of Contents</summary>
 
-- [Catalog_of_my_things](#catalog_of_my_things)
-  - [Description 🏗️](#description-️)
-  - [Video Demo](#video-demo)
-  - [Getting Started 🏁](#getting-started-)
-    - [Prerequisites 📜](#prerequisites-)
-    - [Setup](#setup)
-    - [Clone this repository](#clone-this-repository)
-    - [Move into the directory with](#move-into-the-directory-with)
-    - [Run Project](#run-project)
-    - [Install linter](#install-linter)
-    - [Run linter](#run-linter)
-    - [Run tests](#run-tests)
-    - [Auto-correct](#auto-correct)
-    - [Usage](#usage)
-    - [Roadmap](#roadmap)
-  - [Built With 🔨](#built-with-)
-  - [Authors ✍️](#authors-️)
-  - [🤝 Contributors](#-contributors)
-  - [📝 License](#-license)
-  - [Show your support 💪](#show-your-support-)
-  - [Acknowledgments](#acknowledgments)
+- [Description 🏗️](#description-️)
+- [Video Demo](#video-demo)
+- [Getting Started 🏁](#getting-started-)
+  - [Prerequisites 📜](#prerequisites-)
+  - [Setup](#setup)
+  - [Clone this repository](#clone-this-repository)
+  - [Move into the directory with](#move-into-the-directory-with)
+  - [Run Project](#run-project)
+  - [Install linter](#install-linter)
+  - [Run linter](#run-linter)
+  - [Run tests](#run-tests)
+  - [Auto-correct](#auto-correct)
+  - [Usage](#usage)
+  - [Roadmap](#roadmap)
+- [Built With 🔨](#built-with-)
+- [Authors ✍️](#authors-️)
+- [🤝 Contributors](#-contributors)
+- [📝 License](#-license)
+- [Show your support 💪](#show-your-support-)
+- [Acknowledgments](#acknowledgments)
   </details>
 
 <!-- About the project -->
@@ -57,7 +54,7 @@
 
 A console app that will help you to keep a record of different types of things you won: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below
 
-![schema](https://raw.githubusercontent.com/microverseinc/curriculum-ruby/main/group-capstone/images/catalog_of_my_things.png?token=GHSAT0AAAAAABQQDFYMY5Z2J6QEWFCWDVOQYTL3YUQ)
+![schema](./images/catalog_of_my_things.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
