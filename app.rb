@@ -7,11 +7,15 @@ require_relative './classes/book'
 require_relative './classes/label'
 require_relative './modules/add_book'
 require_relative './modules/genre_manager'
+require_relative './modules/game_module'
+require_relative './modules/game_listing'
 require_relative './modules/preserve_book'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
 
+  include InitializeMethods
+  include Listing
   include AddBook
   include PreserveBook
   include GenreManager
@@ -70,15 +74,21 @@ class App
   end
 
   def list_all_games
-    puts 'list games'
+    list_games(@games)
+    sleep 2
   end
 
   def add_a_game
-    puts 'Add game'
+    game = create_new_game
+    @games << game
+    @authors << game.author
+    puts "\nThank you for adding a new game.\n"
+    sleep 3
   end
 
   def list_all_authors
-    puts 'list authors'
+    list_authors(@authors)
+    sleep 2
   end
 
   def list_all_movies
