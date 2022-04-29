@@ -27,13 +27,11 @@ class App
   include AddMovie
   include PreserveMovie
 
-  # include GenreManager
   include MusicAlbumManager
   include PreserveMusicAlbums
   include PreserveGenres
 
   def initialize
-    # all are default values, you can  change them according your tasks
     @books = load_book
     @authors = load_authors
     @games = load_games
