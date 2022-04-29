@@ -29,6 +29,7 @@
 
 - [Catalog_of_my_things](#catalog_of_my_things)
   - [Description 🏗️](#description-️)
+  - [Video Description](#video-description)
   - [Getting Started 🏁](#getting-started-)
     - [Prerequisites 📜](#prerequisites-)
     - [Setup](#setup)
@@ -37,6 +38,7 @@
     - [Run Project](#run-project)
     - [Install linter](#install-linter)
     - [Run linter](#run-linter)
+    - [Run tests](#run-tests)
     - [Auto-correct](#auto-correct)
     - [Usage](#usage)
     - [Roadmap](#roadmap)
@@ -55,13 +57,11 @@
 
 A console app that will help you to keep a record of different types of things you won: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below
 
-<div align="center">
-  <a href="https://github.com/tresorsawasawa/Catalog_of_my_things">
-    <img src="./images/catalog.png" alt="Logo" width="80" height="80">
-  </a>
-</div>
+![schema](https://raw.githubusercontent.com/microverseinc/curriculum-ruby/main/group-capstone/images/catalog_of_my_things.png?token=GHSAT0AAAAAABQQDFYMY5Z2J6QEWFCWDVOQYTL3YUQ)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+## [Video Description](https://drive.google.com/file/d/1peEIKRuuo2tsASdeocCJaKIKqHX2NmsP/view?usp=sharing)
 
 ## Getting Started 🏁
 
@@ -107,6 +107,12 @@ bundle install
 
 ```bash
 rubocop .
+```
+
+### Run tests
+
+```bash
+rspec spec
 ```
 
 ### Auto-correct
