@@ -6,7 +6,7 @@ require_relative './classes/genre'
 require_relative './classes/book'
 require_relative './classes/label'
 require_relative './modules/add_book'
-require_relative './modules/genre_manager'
+require_relative './modules/preserve_genres'
 require_relative './modules/game_module'
 require_relative './modules/game_listing'
 require_relative './modules/preserve_book'
@@ -27,9 +27,10 @@ class App
   include AddMovie
   include PreserveMovie
 
-  include GenreManager
+  # include GenreManager
   include MusicAlbumManager
   include PreserveMusicAlbums
+  include PreserveGenres
 
   def initialize
     # all are default values, you can  change them according your tasks
@@ -37,7 +38,7 @@ class App
     @authors = load_authors
     @games = load_games
     @labels = load_label
-    @genres = music_genres
+    @genres = load_genres
     @music_albums = load_music_albums(@genres)
     @movies = load_movie
     @source = load_source
@@ -88,7 +89,10 @@ class App
   end
 
   def list_all_genres
-    display_genres(@genres)
+    @genres.each do |genre|
+      puts "Name: #{genre.name}"
+    end
+    # display_genres(@genres)
   end
 
   def add_music_album
