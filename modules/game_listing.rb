@@ -5,9 +5,9 @@ module Listing
     if games.empty?
       puts 'There are no games available'
     else
+      puts '            LIST OF GAMES'
       games.each do |game|
         puts "
-                LIST OF GAMES
           Game id: #{game.id}
           Game\'s last played at : #{game.last_played_at}
           Published on : #{game.publish_date}
@@ -21,9 +21,9 @@ module Listing
     if authors.empty?
       puts 'There are no authors available'
     else
+      puts '                LIST OF Authors'
       authors.each do |author|
         puts "
-                LIST OF AUTHORS
           Author's id: #{author.id} ~ Author's name: #{author.first_name} #{author.last_name}
         "
       end
