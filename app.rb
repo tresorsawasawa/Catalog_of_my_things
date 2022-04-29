@@ -26,7 +26,7 @@ class App
     # all are default values, you can  change them according your tasks
     @books = load_book
     @authors = []
-    @labels = []
+    @labels = load_label
     @genres = music_genres
     @music_albums = load_music_albums(@genres)
     @games = []
