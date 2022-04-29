@@ -21,7 +21,7 @@ class App
   def initialize
     # all are default values, you can  change them according your tasks
     @books = load_book
-    @authors = []
+    @authors = load_authors
     @labels = []
     @genres = [Genre.new('Comedy'), Genre.new('Thriller')]
     @music_albums = []
@@ -55,6 +55,7 @@ class App
   def save_data
     create_book
     save_games
+    save_authors
   end
 
   def list_all_music_albums
