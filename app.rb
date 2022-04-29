@@ -92,7 +92,7 @@ class App
     @genres.each do |genre|
       puts "Name: #{genre.name}"
     end
-    # display_genres(@genres)
+    puts
   end
 
   def add_music_album
