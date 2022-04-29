@@ -7,12 +7,14 @@ require_relative './modules/add_book'
 require_relative './modules/game_module'
 require_relative './modules/game_listing'
 require_relative './modules/preserve_book'
+require_relative './modules/preserve_games'
 
 class App
   attr_accessor :books, :games, :authors, :music_albums
 
   include InitializeMethods
   include Listing
+  include PreserveGames
   include AddBook
   include PreserveBook
 
@@ -23,7 +25,7 @@ class App
     @labels = []
     @genres = [Genre.new('Comedy'), Genre.new('Thriller')]
     @music_albums = []
-    @games = []
+    @games = load_games
   end
 
   def list_all_books
@@ -52,6 +54,7 @@ class App
 
   def save_data
     create_book
+    save_games
   end
 
   def list_all_music_albums
