@@ -24,7 +24,7 @@ module Listing
       authors.each do |author|
         puts "
                 LIST OF AUTHORS
-          Author's name: #{author.first_name} #{author.last_name}
+          Author's id: #{author.id} ~ Author's name: #{author.first_name} #{author.last_name}
         "
       end
     end
