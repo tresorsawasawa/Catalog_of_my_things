@@ -143,12 +143,12 @@ This will be included when app is done.
 
 - [x] Setup Kanban board
 - [x] Setup repository for git flow and linters
-- [ ] Create Item class and all methods visible in the diagram.
-- [ ] Create classes for books, music, games and movies.
-- [ ] Add class methods.
-- [ ] Add list options.
-- [ ] Preserve data in JSON file.
-- [ ] Unit tests.
+- [x] Create Item class and all methods visible in the diagram.
+- [x] Create classes for books, music, games and movies.
+- [x] Add class methods.
+- [x] Add list options.
+- [x] Preserve data in JSON file.
+- [x] Unit tests.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
