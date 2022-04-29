@@ -2,7 +2,6 @@ require 'json'
 require_relative '../classes/book'
 
 module PreserveBook
-
   def load_label
     data = []
     file = './data/label.json'
@@ -16,7 +15,7 @@ module PreserveBook
 
     data
   end
-  
+
   def load_book
     data = []
     file = './data/book.json'
