@@ -43,7 +43,7 @@ CREATE TABLE music_album (
 CREATE TABLE game (
     last_played_at DATE,
     multiplayer BOOLEAN,
-)INHERITS(items);
+);
 
 CREATE TABLE authors (
     id  INT GENERATED ALWAYS AS IDENTITY,
