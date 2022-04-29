@@ -4,7 +4,7 @@ require_relative 'app'
 class Main
   def options
     puts 'Welcome, what would you like to do?'
-    puts '
+    puts "
     1. List all books
     2. List all music albums
     3. List all movies
@@ -17,7 +17,7 @@ class Main
     10. Add a music album
     11. Add a movie
     12. Add a game
-    13. Exit'
+    13. Exit\n\n"
     puts 'Select option by typing the number: '
   end
 

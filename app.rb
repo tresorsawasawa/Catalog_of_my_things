@@ -1,9 +1,12 @@
+require 'json'
 require_relative './modules/music_album_manager'
+require_relative './modules/preserve_music_album_data'
 require_relative './classes/music_album'
 require_relative './classes/genre'
 require_relative './classes/book'
 require_relative './classes/label'
 require_relative './modules/add_book'
+require_relative './modules/genre_manager'
 require_relative './modules/game_module'
 require_relative './modules/game_listing'
 require_relative './modules/preserve_book'
@@ -17,15 +20,18 @@ class App
   include PreserveGames
   include AddBook
   include PreserveBook
+  include GenreManager
+  include MusicAlbumManager
+  include PreserveMusicAlbums
 
   def initialize
     # all are default values, you can  change them according your tasks
     @books = load_book
     @authors = load_authors
-    @labels = []
-    @genres = [Genre.new('Comedy'), Genre.new('Thriller')]
-    @music_albums = []
     @games = load_games
+    @labels = load_label
+    @genres = music_genres
+    @music_albums = load_music_albums(@genres)
   end
 
   def list_all_books
@@ -56,6 +62,7 @@ class App
     create_book
     save_games
     save_authors
+    save_music_album(@music_albums)
   end
 
   def list_all_music_albums
@@ -63,7 +70,7 @@ class App
   end
 
   def list_all_genres
-    puts 'list genres'
+    display_genres(@genres)
   end
 
   def add_music_album

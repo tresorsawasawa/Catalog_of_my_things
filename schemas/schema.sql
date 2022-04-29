@@ -1,3 +1,5 @@
+CREATE DATABASE catalog;
+
 CREATE TABLE item (
     id  INT GENERATED ALWAYS AS IDENTITY,
     genre_id INT,
@@ -25,3 +27,19 @@ CREATE TABLE labels (
     color VARCHAR(100),
     PRIMARY KEY(id)
 );
+
+-- Create "genres" table
+CREATE TABLE genres (
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(100),
+  PRIMARY KEY(id)
+);
+
+-- Create "music_album" table
+CREATE TABLE music_album (
+  on_spotify BOOLEAN
+)INHERITS(items);
+
+-- Update "music_album" table
+ALTER TABLE music_album ADD CONSTRAINT music_albums_id PRIMARY KEY (id)
+ALTER TABLE music_album ALTER id ADD GENERATED ALWAYS AS IDENTITY; 
